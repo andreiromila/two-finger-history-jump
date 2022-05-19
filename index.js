@@ -11,14 +11,19 @@
   let timeout;
 
   // get settings  
-  let settings = await browser.runtime.sendMessage({ cmd: 'getSettings' });
+  // let settings = await browser.runtime.sendMessage({ cmd: 'getSettings' });
+  let settings = {
+    threshold: 20,
+    newTimeout: 200,
+    deadzone: 20
+  };
 
-  setInterval(async () => {
+  // setInterval(async () => {
     // Get settings again (this code doesn't seem to hurt performance and
     // it allow to applying the latest settings without needing to reload
     // the current page)
-    settings = await browser.runtime.sendMessage({ cmd: 'getSettings' });
-  }, 1000);
+  //  settings = await browser.runtime.sendMessage({ cmd: 'getSettings' });
+  //}, 1000);
 
   // Add styles to the document
   let style = document.createElement('STYLE');
