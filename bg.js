@@ -2,6 +2,8 @@
 // Whenever a content script or a popup script needs to retrieve or modify the
 // settings it has to send a message which is handled here.
 
+// Just to test GPG signing
+
 (async () => {
   // defaults
   const defaultSettings = {
